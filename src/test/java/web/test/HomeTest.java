@@ -40,7 +40,7 @@ public class HomeTest extends BaseTest {
     @DisplayName("Checking click to 'Contact Us ' button")
     void checkContactUsButton() {
         new Home().clickContactUs();
-        $("body").shouldHave(text("Let’s get closer-TEST-ERROR"));
+        $(".col-md-6").shouldHave(text("Let’s get closer-TEST-ERROR"));
         $("body").shouldHave(text("+1 (585) 274-5100"));
     }
 
