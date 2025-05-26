@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 import web.pages.Home;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
 
 public class HomeTest extends BaseTest {
 
@@ -16,32 +14,30 @@ public class HomeTest extends BaseTest {
     @Tags({@Tag("home"), @Tag("ui")})
     @DisplayName("Checking title text on Home page")
     void checkHomePageTitle() {
-        new Home().getPageTitleElement().shouldHave(text("An agency fueled by purpose, with impact you can certify"));
+        new Home().getPageTitleElement().shouldHave(text("Simplify Claims. Streamline Appraisals. Scale Payments."));
     }
 
     @Test
     @Tags({@Tag("home"), @Tag("ui")})
-    @DisplayName("Checking click to 'What we do Best' button")
+    @DisplayName("Checking click to 'Harness the full power of digital' button")
     void checkGetStartedButton() {
-        new Home().clickWhatWeDo();
-        $("[id='what-we-do']").shouldBe(visible);
+        new Home().clickToGetDemo()
+                .getPageTitleElement().shouldHave(text("Simplify Claims. Streamline Appraisals. Scale Payments."));
     }
 
     @Test
     @Tags({@Tag("home"), @Tag("ui")})
-    @DisplayName("Checking click to 'Learn More' button")
-    void checkLearnMoreButton() {
-        new Home().clickLearnMore();
-        $("body").shouldHave(text("Results-driven marketing built differently"));
+    @DisplayName("Checking click to 'Discover Virtual Appraisals' button")
+    void checkDiscoverVirtualAppraisalsButton() {
+        new Home().clickToDiscoverVirtualAppraisals()
+                .getPageTitleElement().shouldHave(text("The original insurance appraisal software that started the revolution"));
     }
 
     @Test
     @Tags({@Tag("home"), @Tag("ui")})
-    @DisplayName("Checking click to 'Contact Us ' button")
+    @DisplayName("Checking click to 'Contact Us' button")
     void checkContactUsButton() {
-        new Home().clickContactUs();
-        $(".col-md-6").shouldHave(text("Let’s get closer-TEST-ERROR"));
-        $("body").shouldHave(text("+1 (585) 274-5100"));
+        new Home().clickToContactUs().getPageTitleElement().shouldHave(text("Contact Us"));
     }
 
 

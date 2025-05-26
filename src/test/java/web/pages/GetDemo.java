@@ -5,10 +5,11 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class ContactUs {
+public class GetDemo {
 
     @Step("get Page Title")
     public SelenideElement getPageTitleElement() {
-        return $("[id='el-23027a2a']");
+        return $("[id='el-65784fbf']");
     }
+
 }

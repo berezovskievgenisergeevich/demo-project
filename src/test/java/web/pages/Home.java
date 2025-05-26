@@ -12,11 +12,17 @@ public class Home {
     public Home() {
         step("Open page: " + Configuration.baseUrl,
                 () -> open("/"));
+        acceptCookie();
+    }
+
+    @Step("accept cookie")
+    public void acceptCookie() {
+        $("[id='hs-eu-confirmation-button']").click();
     }
 
     @Step("get Page Title")
     public SelenideElement getPageTitleElement() {
-        return $("h1[data-animation='titleFadeIn']");
+        return $("[id='el-f539174e']");
     }
 
     @Step("get menu Element")
@@ -24,10 +30,22 @@ public class Home {
         return $("[id='menu-primary-menu']");
     }
 
-    @Step("click to 'What We Do Best' button")
-    public Home clickWhatWeDo() {
-        $("[href='#what-we-do']");
-        return this;
+    @Step("click to 'Harness the full power of digital' button")
+    public GetDemo clickToGetDemo() {
+        $("[id='el-c22202d7'] a").click();
+        return new GetDemo();
+    }
+
+    @Step("click to 'Contact Us' button")
+    public ContactUs clickToContactUs() {
+        $("[id='mega-menu-item-169877045']").click();
+        return new ContactUs();
+    }
+
+    @Step("click to 'Discover Virtual Appraisals' button")
+    public InsuranceAppraisals clickToDiscoverVirtualAppraisals() {
+        $("[id='el-68c10d18'] a").click();
+        return new InsuranceAppraisals();
     }
 
     @Step("click to 'Learn More' button")
@@ -36,11 +54,6 @@ public class Home {
         return this;
     }
 
-    @Step("click to 'Contact Us' button")
-    public ContactUs clickContactUs() {
-        $("[href='/contact-us/']").click();
-        return new ContactUs();
-    }
 
 
 }
