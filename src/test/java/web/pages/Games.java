@@ -9,13 +9,15 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class Games {
+public class Games extends Page{
 
     public Games(boolean flag) {
         if (flag) {
             step("Open page: " + Configuration.baseUrl,
                     () -> open("/games"));
+            acceptCookie();
         }
+
     }
 
 

@@ -28,7 +28,7 @@ public class HomeTest extends BaseTest {
 
     @Test
     @Tags({@Tag("home"), @Tag("ui")})
-    @DisplayName("Checking click to 'Contact Us' button")
+    @DisplayName("Checking click to 'More' button In 'Provably Fair' section")
     void checkContactUsButton() {
         new Home().clickToMoreInProvablyFair().getPageTitleElement().shouldHave(text("Provably Fair"));
     }
