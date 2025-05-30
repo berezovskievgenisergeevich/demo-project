@@ -11,5 +11,6 @@ public class TestData {
     private final Faker faker = new Faker(new Locale("en-US"));
     public final String RANDOM_VEGETABLE = faker.food().vegetable();
     public static final String SEARCH_SELENIDE = "SELENIDE";
+    public final int ALL_GAMES_COUNT = 17;
 
 }
