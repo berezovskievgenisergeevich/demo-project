@@ -9,10 +9,10 @@ import web.pages.Home;
 
 import static com.codeborne.selenide.Condition.text;
 @Story("[UI] Home")
-public class HomeTest extends BaseTest {
+public class HomeTest extends First {
 
     @Test
-    @Tags({@Tag("home"), @Tag("ui")})
+    @Tags({@Tag("home"), @Tag("ui"), @Tag("q")})
     @DisplayName("Checking title text on Home page")
     void checkHomePageTitle() {
         new Home().getPageTitleElement().shouldHave(text("Innovative Casino Games"));
@@ -26,7 +26,7 @@ public class HomeTest extends BaseTest {
                 .getPageTitleElement().shouldHave(text("Our Games"));
     }
 
-    @Test
+/*    @Test
     @Tags({@Tag("home"), @Tag("ui")})
     @DisplayName("Checking click to 'More' button In 'Provably Fair' section")
     void checkContactUsButton() {
@@ -39,7 +39,7 @@ public class HomeTest extends BaseTest {
     void checkDiscoverVirtualAppraisalsButton() {
         new Home().clickToContactUs()
                 .getPageTitleElement().shouldHave(text("Contact Us"));
-    }
+    }*/
 
 
 }

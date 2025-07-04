@@ -36,7 +36,7 @@ public class Home extends Page{
 
     @Step("click to 'More' button in 'Provably fair' block")
     public ProvablyFair clickToMoreInProvablyFair() {
-        $("[routerlink='/provably-fair']").click();
+        $("[routerlink='/provably-fair']").hover().click();
         return new ProvablyFair(false);
     }
 

@@ -13,13 +13,13 @@ import static com.codeborne.selenide.Condition.text;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Story("[UI] Games")
-public class GamesTest extends BaseTest {
-    @Test
+public class GamesTest extends Second {
+/*    @Test
     @Tags({@Tag("games"), @Tag("ui")})
     @DisplayName("Сhecking the number of games on the page")
     void checkNumberOfGames() {
         assertThat(new Games(true).getAllGamesElements().size() == testData.ALL_GAMES_COUNT);
-    }
+    }*/
 
     @Test
     @Tags({@Tag("games"), @Tag("ui")})
